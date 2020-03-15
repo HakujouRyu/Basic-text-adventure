@@ -3,3 +3,12 @@ class Monster:
         self.current_room = current_room
     def __str__(self):
         return str(vars(self))
+
+class Goblin(Monster):
+    pass
+
+class Troll(Monster):
+    pass
+
+class Abboration(Monster):
+    pass
