@@ -1,6 +1,8 @@
 # Basic-text-adventure
 A very basic text adventure game
 
+## [Trello](https://trello.com/b/pfgiEUvJ/text-adventure)
+
 # Welcome Adventurers!
 This is just a simple text game to play around with my coding skills. It is not balanced or complete in any way.
 
