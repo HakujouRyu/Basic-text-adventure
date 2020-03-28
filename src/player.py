@@ -12,7 +12,7 @@ class Player:
 
 
     def take_item(self, item_name):
-        new_item = self.current_room.contents.pop(item_name)
+        new_item = self.current_room.contents.pop(item_name, None)
         if not new_item:
             print(f"{item_name} is not here!")
         else: 
@@ -21,7 +21,7 @@ class Player:
 
 
     def drop_item(self, item_name):
-        new_item = self.inventory.pop(item_name)
+        new_item = self.inventory.pop(item_name, None)
         if not new_item:
             print(f"You dont have {item_name}!")
         else: 
@@ -37,6 +37,10 @@ class Player:
 
     def change_room(self, direction):
         if hasattr(self.current_room, f'{direction[0]}_to'):
+            if hasattr(self.current_room, "door"):
+                if self.current_room.door.is_locked or not self.current_room.door.is_open:
+                    print("There's a door in the way")
+                    return
             self.current_room = getattr(self.current_room, f'{direction[0]}_to')
             gameplay.print_surroundings(self)
         else: print("You can't go that way!\n")

@@ -10,12 +10,17 @@ def process_cmd(player, cmd):
     "drink": not_implemented,
     "search": player.search_room,
     "move": player.change_room,
+    "open door": player.current_room.door.open_door,
+    "unlock door": player.current_room.door.unlock_door,
     }
     split_cmd = cmd.split()
     print(f'Executing:{split_cmd}')
     to_do = commands.get(split_cmd[0], False)
-    if not to_do:
+    adv_todo = commands.get(cmd, False)
+    if not to_do and not adv_todo: #If first word not in commands
         print(f'I can\'t understand "{cmd}"')
+        return
+    if adv_todo: adv_todo(player)
     else: to_do(split_cmd[-1])
     
 
