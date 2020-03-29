@@ -1,7 +1,7 @@
 from player import Player
 
 class Door:
-    def __init__(self, is_open=True, is_locked=False):
+    def __init__(self, is_open=True, is_locked=False,):
         self.is_open = is_open
         self.is_locked = is_locked
 

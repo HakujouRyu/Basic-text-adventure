@@ -1,10 +1,10 @@
-from room import Room, RoomWithDoor
+from room import Room
 from doors import Door, BossDoor
 import item
 
 def build_rooms():
     room = {
-            'outside':  RoomWithDoor("Outside Cave Entrance",
+            'outside':  Room("Outside Cave Entrance",
                 "North of you, the cave mount beckons", {'sword': item.Sword(1), "key": item.Item(10), "golden key": item.Item(11)},
                 door=Door(False, True)),
 
